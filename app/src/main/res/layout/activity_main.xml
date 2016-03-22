@@ -7,18 +7,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jdm5908_bw.ist402.sms_tester.MainActivity"
-    android:background="@mipmap/ic_launcher">
-
+    android:background="#000000"
+    tools:context="com.jdm5908_bw.ist402.sms_tester.MainActivity">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/messageEditText"
+        android:id="@+id/messageTextView"
         android:background="#ffffff"
         android:minHeight="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="109dp" />
+        android:layout_above="@+id/sendTextButton"
+        android:layout_marginBottom="75dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -27,15 +27,18 @@
         android:text="Select Contact"
         android:id="@+id/selectContactButton"
         android:onClick="pickContact"
-        android:layout_centerVertical="true"
+        android:layout_above="@id/messageTextView"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="40dp"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:id="@+id/imageView"
-        android:background="#ffffff" />
+        android:background="#ffffff"
+        android:layout_above="@+id/selectContactButton"
+        android:src="@mipmap/ic_launcher"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -44,5 +47,18 @@
         android:id="@+id/sendTextButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/messageEditText" />
+        android:layout_alignEnd="@+id/messageTextView"
+        android:onClick="sendText"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:textSize="24sp" />
 </RelativeLayout>
